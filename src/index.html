@@ -1,0 +1,652 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOBBERKAU ENERGIE by G.U.T</title>
+        <link href="./assets/app/images/favicon.png" rel="icon" type="image/png" />
+        <link rel="stylesheet" href="./assets/vendors/swiper@11.1.0/swiper-bundle.min.css">
+		<link rel="stylesheet" href="./assets/app/css/style.css" />
+		<link rel="stylesheet" href="./assets/app/css/custom.css" />
+    </head>
+    <body>
+        <div class="flex flex-col min-h-screen">
+            <header class="fixed top-0 left-0 w-full z-50" id="header">
+                <div class="container pt-6 md:pt-8 px-5 md:px-6">
+                    <nav class="flex items-center justify-between bg-blue-1000 py-3 px-4 rounded-lg rounded-br-none shadow-lg gap-x-1 sm:gap-x-2 md:gap-x-4" aria-label="Global">
+                        <div class="flex lg:flex-1">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">DOBBERKAU ENERGIE by G.U.T</span>
+                                <img class="h-8 sm:h-9 md:h-10 lg:h-[3.2rem] w-auto object-contain" src="./assets/app/images/logo-header.png" alt="DOBBERKAU ENERGIE">
+                            </a>
+                        </div>
+                        <div class="hidden lg:flex lg:gap-x-8 justify-center header-nav">
+                            <a href="#uber-uns" class="nav-item active text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Über Uns</span></a>
+                            <a href="#solaranlage" class="nav-item text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Solaranlage</span></a>
+                            <a href="#warmepumpe" class="nav-item text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Wärmepumpe</span></a>
+                            <a href="#stromspeicher" class="nav-item text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Stromspeicher</span></a>
+                            <a href="#wallbox" class="nav-item text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Wallbox</span></a>
+				            <a href="#klimaanlage" class="nav-item text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Klimaanlage</span></a>
+                            <a href="#" class="text-sm leading-6 text-center text-white hover:text-gray-200 transition"><span class="relative py-1.5 inline-block">Förderung</span></a>
+                        </div>
+                        <div class="flex flex-1 items-center justify-end gap-x-6">
+                            <a href="#" class="text-center rounded-md rounded-br-non px-2 md:px-3 py-2 text-xs md:text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                        </div>
+                        <div class="flex lg:hidden">
+                            <button type="button" id="open-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
+                                <span class="sr-only">Open main menu</span>
+                                <svg
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+                <!-- Mobile menu, show/hide based on menu open state. -->
+                <div
+                    id="mobile-menu"
+                    class="lg:hidden"
+                    role="dialog"
+                    aria-modal="true"
+                    style="display: none;"
+                >
+                    <!-- Background backdrop, show/hide based on slide-over state. -->
+                    <div class="fixed inset-0 z-10 bg-gray-950 opacity-50"></div>
+                    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-blue-1000 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center gap-x-2 md:gap-x-4">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">DOBBERKAU ENERGIE</span>
+                                <img loading="lazy" class="h-8 sm:h-9 md:h-10 lg:h-[3.2rem] w-auto object-contain" src="./assets/app/images/logo-header.png" alt="DOBBERKAU ENERGIE">
+                            </a>
+                            <a href="#" class="text-center ml-auto rounded-md rounded-br-none px-2 md:px-3 py-2 text-xs md:text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">
+                                Angebot anfragen
+                            </a>
+                            <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-white">
+                                <span class="sr-only">Close menu</span>
+                                <svg
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="py-6 header-nav">
+                                    <a href="#uber-uns" class="nav-item active -mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Über Uns</span></a>
+                                    <a href="#solaranlage" class="nav-item -mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Solaranlage</span></a>
+                                    <a href="#warmepumpe" class="nav-item -mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Wärmepumpe</span></a>
+                                    <a href="#stromspeicher" class="nav-item -mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Stromspeicher</span></a>
+                                    <a href="#wallbox" class="nav-item -mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Wallbox</span></a>
+                                    <a href="#klimaanlage" class="nav-item -mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Klimaanlage</span></a>
+                                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:text-gray-200 transition hover:bg-blue-950"><span class="relative py-1.5 inline-block">Förderung</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="flex-1 main-body">
+                <section class="relative flex items-center min-h-[90vh]">
+                    <div class="container pt-44 pb-20 z-30 relative">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <h1 class="text-white font-brockmann font-semibold text-4xl lg:text-[3.5rem] leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Wir machen Ihr Haus fit für die Zukunft.</h1>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                                <div class="hero-right">
+                                    <div class="swiper hero-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                                    <img src="./assets/app/images/2.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                                    <img src="./assets/app/images/3.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                                    <img src="./assets/app/images/4.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                                    <img src="./assets/app/images/5.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-pagination hero-swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 z-10 bg-slate-950 opacity-20"></div>
+                    <div style="background-image: url('./assets/app/images/1.jpg');" class="bg-cover bg-no-repeat bg-center z-0 absolute inset-0"></div>
+                </section>
+                <section class="nav-item-target" id="uber-uns">
+                    <div class="container pt-20 pb-14">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                    <img loading="lazy" src="./assets/app/images/3.jpg" class="w-full aspect-square object-cover object-center" alt="Image">
+                                </div>                            
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Two or three line headline goes here</h2>
+                                    <div class="flex flex-col gap-6">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    </div>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                            </div>                        
+                            <div class="pt-8 md:pt-16 mt-8">
+                                <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">
+                                    Eine Auswahl unserer lokalen Partnerunternehmen
+                                </h2>
+                                <div class="mx-auto mt-8 max-w-lg sm:max-w-xl lg:mx-0 lg:max-w-none">
+                                    <div class="swiper logo-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img
+                                                    class="max-h-12 w-full object-contain"
+                                                    src="./assets/app/images/logo/first/1.jpg"
+                                                    alt="Partnerunternehmen"
+                                                    width="158"
+                                                    height="48"
+                                                >
+                                            </div>   
+                                            <div class="swiper-slide">
+                                                <img
+                                                    class="max-h-12 w-full object-contain"
+                                                    src="./assets/app/images/logo/first/2.jpg"
+                                                    alt="Partnerunternehmen"
+                                                    width="158"
+                                                    height="48"
+                                                >
+                                            </div>   
+                                            <div class="swiper-slide">
+                                                <img
+                                                    class="max-h-12 w-full object-contain"
+                                                    src="./assets/app/images/logo/first/3.jpg"
+                                                    alt="Partnerunternehmen"
+                                                    width="158"
+                                                    height="48"
+                                                >
+                                            </div>   
+                                            <div class="swiper-slide">
+                                                <img
+                                                    class="max-h-12 w-full object-contain"
+                                                    src="./assets/app/images/logo/first/4.jpg"
+                                                    alt="Partnerunternehmen"
+                                                    width="158"
+                                                    height="48"
+                                                >
+                                            </div>  
+                                            <div class="swiper-slide">
+                                                <img
+                                                    class="max-h-12 w-full object-contain"
+                                                    src="./assets/app/images/logo/first/5.jpg"
+                                                    alt="Partnerunternehmen"
+                                                    width="158"
+                                                    height="48"
+                                                >
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+  
+                <section class="nav-item-target bg-slate-100" id="solaranlage">
+                    <div class="container py-20">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none md:order-last">
+                                    <img loading="lazy" src="./assets/app/images/5.jpg" class="w-full aspect-square object-cover object-center" alt="Image">
+                                </div>                            
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <div class="flex flex-col gap-5 items-start">
+                                        <div class="text-white text-[0.9rem] font-semibold leading-6 bg-purple-750 py-1 px-3 rounded-md">SOLARANLAGE</div>
+                                        <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Two or three line headline goes here</h2>
+                                    </div>
+                                    <div class="flex flex-col gap-6">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="nav-item-target" id="warmepumpe">
+                    <div class="container py-20">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                    <img loading="lazy" src="./assets/app/images/6.jpg" class="w-full aspect-square object-cover object-center" alt="Image">
+                                </div>                            
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <div class="flex flex-col gap-5 items-start">
+                                        <div class="text-white text-[0.9rem] font-semibold leading-6 bg-purple-750 py-1 px-3 rounded-md">WÄRMEPUMPE</div>
+                                        <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Two or three line headline goes here</h2>
+                                    </div>
+                                    <div class="flex flex-col gap-6">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="nav-item-target bg-slate-100" id="stromspeicher">
+                    <div class="container py-20">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none md:order-last">
+                                    <img loading="lazy" src="./assets/app/images/7.jpg" class="w-full aspect-square object-cover object-center" alt="Image">
+                                </div>                            
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <div class="flex flex-col gap-5 items-start">
+                                        <div class="text-white text-[0.9rem] font-semibold leading-6 bg-purple-750 py-1 px-3 rounded-md">STROMSPEICHER</div>
+                                        <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Two or three line headline goes here</h2>
+                                    </div>
+                                    <div class="flex flex-col gap-6">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="nav-item-target" id="wallbox">
+                    <div class="container pt-20 pb-14">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none">
+                                    <img loading="lazy" src="./assets/app/images/4.jpg" class="w-full aspect-square object-cover object-center" alt="Image">
+                                </div>                            
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <div class="flex flex-col gap-5 items-start">
+                                        <div class="text-white text-[0.9rem] font-semibold leading-6 bg-purple-750 py-1 px-3 rounded-md">WALLBOX</div>
+                                        <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Two or three line headline goes here</h2>
+                                    </div>
+                                    <div class="flex flex-col gap-6">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                            </div>                        
+                            <div class="pt-8 md:pt-16 mt-8">
+                                <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">
+                                    Hochwertige Produkte von führenden Herstellern
+                                </h2>
+                                <div class="mx-auto mt-8 grid max-w-lg grid-cols-4 items-center gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                                    <img
+                                        class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                                        src="./assets/app/images/logo/second/1.jpg"
+                                        alt="Produkte"
+                                        width="158"
+                                        height="48"
+                                    >
+                                    <img
+                                        class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                                        src="./assets/app/images/logo/second/2.jpg"
+                                        alt="Produkte"
+                                        width="158"
+                                        height="48"
+                                    >
+                                    <img
+                                        class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                                        src="./assets/app/images/logo/second/3.jpg"
+                                        alt="Produkte"
+                                        width="158"
+                                        height="48"
+                                    >
+                                    <img
+                                        class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+                                        src="./assets/app/images/logo/second/4.jpg"
+                                        alt="Produkte"
+                                        width="158"
+                                        height="48"
+                                    >
+                                    <img
+                                        class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+                                        src="./assets/app/images/logo/second/5.jpg"
+                                        alt="Produkte"
+                                        width="158"
+                                        height="48"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="nav-item-target bg-slate-100" id="klimaanlage">
+                    <div class="container py-20">
+                        <div class="px-4 md:px-10">
+                            <div class="grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-12 lg:gap-24">
+                                <div class="image-box overflow-hidden rounded-3xl rounded-br-none md:order-last">
+                                    <img loading="lazy" src="./assets/app/images/7.jpg" class="w-full aspect-square object-cover object-center" alt="Image">
+                                </div>                            
+                                <div class="flex flex-col justify-center items-start gap-6 md:gap-8">
+                                    <div class="flex flex-col gap-5 items-start">
+                                        <div class="text-white text-[0.9rem] font-semibold leading-6 bg-purple-750 py-1 px-3 rounded-md">Klimaanlage</div>
+                                        <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px]">Two or three line headline goes here</h2>
+                                    </div>
+                                    <div class="flex flex-col gap-6">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <a href="#" class="text-center rounded-md rounded-br-none px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600">Angebot anfragen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="">
+                    <div class="container py-20">
+                        <div class="px-4 md:px-10">
+                            <h2 class="text-gray-900 font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px] mb-8">
+                                <b class="text-gradient-primay">DOBBERKAU-ENERGIE.</b><br>IHR LOKALER ANSPRECHPARTNER.
+                            </h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                        <img loading="lazy" src="./assets/app/images/8.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                    </div>
+                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                        <img loading="lazy" src="./assets/app/images/9.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                    </div>
+                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                        <img loading="lazy" src="./assets/app/images/10.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                    </div>
+                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-slate-100">
+                    <div class="py-20">
+                        <div class="container">
+                            <div class="px-4 md:px-10">
+                                <h2 class="text-gray-900 text-center font-brockmann font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.1] md:leading-[1.1] lg:leading-[1.1] tracking-[0.3px] mb-8">
+                                    PRODUKTAUSWAHL
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden">
+                            <div class="product-slider-area container">
+                                <div class="px-4 md:px-10">
+                                    <div class="swiper product-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/1.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/2.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/3.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/4.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/5.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/6.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/7.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="bg-gray-900 hover:bg-gray-800 transition overflow-hidden rounded-2xl rounded-br-none p-4 block">
+                                                    <div class="image-box overflow-hidden rounded-2xl rounded-br-none md:order-last mb-5">
+                                                        <img loading="lazy" src="./assets/app/images/8.jpg" class="w-full aspect-video object-cover object-center" alt="Image">
+                                                    </div>
+                                                    <div class="p-2 flex-1 flex flex-col gap-5">
+                                                        <h3 class="line-clamp-3 text-white text-2xl font-brockmann font-semibold">Headline</h3>
+                                                        <p class="line-clamp-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-pagination product-swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+            <footer class="bg-blue-1000" aria-labelledby="footer-heading">
+                <h2 id="footer-heading" class="sr-only">Footer</h2>
+                <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+                    <div class="px-4 md:px-10">
+                        <div class="xl:grid xl:grid-cols-5 xl:gap-8">
+                            <div class="space-y-8 xl:col-span-2">
+                                <img loading="lazy" class="h-10 lg:h-[3.6rem] w-auto object-contain" src="./assets/app/images/logo-header.png" alt="DOBBERKAU ENERGIE">
+                                <p class="text-sm leading-6 text-gray-300 max-w-96">
+                                    Dobberkau KG<br>
+Hogrevestraße 10<br>
+29223 Celle<br>
+<br><br>
+Telefon: +49 5141 96901<br>
+E-Mail: info.dobberkau@gut-gruppe.de<br>
+Website: www.dobberkau-celle.de<br>
+                                </p>
+                                <div class="flex space-x-6">
+                                    <a href="#" class="text-gray-500 hover:text-gray-400">
+                                        <span class="sr-only">Facebook</span>
+                                        <svg
+                                            class="h-6 w-6"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                        >
+                                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-500 hover:text-gray-400">
+                                        <span class="sr-only">Instagram</span>
+                                        <svg
+                                            class="h-6 w-6"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                        >
+                                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt-16 gap-8 xl:col-span-3 xl:mt-0">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                                    <div>
+                                        <h3 class="text-sm font-brockmann font-semibold leading-6 text-white">PRODUKTE</h3>
+                                        <ul role="list" class="mt-6 space-y-4">
+                                            <li>
+                                                <a href="#solaranlage" class="text-sm leading-6 text-gray-300 hover:text-white">Solaranlage</a>
+                                            </li>
+                                            <li>
+                                                <a href="#warmepumpe" class="text-sm leading-6 text-gray-300 hover:text-white">Wärmepumpe</a>
+                                            </li>
+                                            <li>
+                                                <a href="#stromspeicher" class="text-sm leading-6 text-gray-300 hover:text-white">Stromspeicher</a>
+                                            </li>
+                                            <li>
+                                                <a href="#wallbox" class="text-sm leading-6 text-gray-300 hover:text-white">Wallbox</a>
+                                            </li>
+						                    <li>
+                                                <a href="#klimaanlage" class="text-sm leading-6 text-gray-300 hover:text-white">Klimaanlage</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-sm font-brockmann font-semibold leading-6 text-white">UNTERNEHMEN</h3>
+                                        <ul role="list" class="mt-6 space-y-4">
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Über Uns</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Standorte</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Partner</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Stellen</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Kontakt</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-sm font-brockmann font-semibold leading-6 text-white">RECHTLICHES</h3>
+                                        <ul role="list" class="mt-6 space-y-4">
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Datenschutz</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">AGB</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Impressum</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+                            <p class="text-xs leading-5 text-gray-400">&copy; 2024 Dobberkau KG · Hogrevestraße 10 · 29223 Celle. Alle Rechte vorbehalten.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Chatbot -->
+        <div class="fixed z-50 right-5 bottom-5 chatbot-w max-w-96 flex flex-col items-end">
+            <div id="chatbot-iframe-area" class="absolute chatbot-h max-h-[660px] w-full bottom-full right-0 pb-3 transition opacity-0 invisible pointer-events-none">
+                <div class="bg-white w-full h-full rounded-xl shadow-2xl overflow-hidden">
+                    <iframe id="chatbot-iframe" data-src="https://gut-interface-bot.vercel.app/" frameborder="0" class="w-full h-full"></iframe>
+                </div>
+            </div>
+            <button id="chatbot-toggle" class="flex items-center gap-3 text-center rounded-md rounded-br-none px-4 py-2 md:py-2.5 text-sm font-semibold text-white transition-all bg-gradient-to-r from-violet-900 to-pink-700 hover:from-violet-800 hover:to-pink-600 border-none outline-none">
+                <svg height="24" viewBox="0 0 512 512" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m16 133.612h260.513c7.186 29.034 33.45 50.627 64.673 50.627s57.487-21.593 64.673-50.627h90.141c8.836 0 16-7.164 16-16s-7.164-16-16-16h-90.142c-7.185-29.034-33.449-50.628-64.673-50.628s-57.488 21.594-64.673 50.628h-260.512c-8.836 0-16 7.164-16 16s7.164 16 16 16zm325.186-50.628c19.094 0 34.628 15.534 34.628 34.627 0 19.094-15.534 34.628-34.628 34.628s-34.628-15.534-34.628-34.628c0-19.093 15.534-34.627 34.628-34.627zm-325.186 189.016h90.142c7.186 29.034 33.449 50.627 64.673 50.627s57.487-21.593 64.673-50.627h260.512c8.836 0 16-7.164 16-16s-7.164-16-16-16h-260.513c-7.186-29.034-33.449-50.628-64.673-50.628s-57.487 21.594-64.673 50.628h-90.141c-8.836 0-16 7.164-16 16s7.163 16 16 16zm154.814-50.628c19.094 0 34.628 15.534 34.628 34.628 0 19.093-15.534 34.627-34.628 34.627s-34.628-15.534-34.628-34.627c0-19.094 15.534-34.628 34.628-34.628zm325.186 157.016h-90.142c-7.186-29.034-33.449-50.628-64.673-50.628s-57.487 21.594-64.673 50.628h-260.512c-8.836 0-16 7.164-16 16s7.164 16 16 16h260.513c7.186 29.034 33.449 50.628 64.673 50.628s57.487-21.594 64.673-50.628h90.141c8.836 0 16-7.164 16-16s-7.163-16-16-16zm-154.814 50.628c-19.094 0-34.628-15.534-34.628-34.628s15.534-34.628 34.628-34.628 34.628 15.534 34.628 34.628-15.534 34.628-34.628 34.628z" fill="#fff"/></svg>
+                <span class="hidden sm:inline-block">Angebot konfigurieren</span>
+            </button>
+        </div>
+
+
+        <!-- whatsapp -->
+        <div class="elfsight-app-24f7093c-e8d0-498c-bdb7-c673328e05cd" data-elfsight-app-lazy></div>
+		
+        <script src="./assets/vendors/swiper@11.1.0/swiper-bundle.min.js"></script>
+		<script src="./assets/app/js/main.js"></script>
+        <!-- whatsapp -->
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+
+    </body>
+</html>
