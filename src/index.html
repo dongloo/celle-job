@@ -235,9 +235,9 @@
                 <!-- Main -->
                 <section>
                     <div class="container pt-0 md:pt-8 pb-20 lg:pb-28">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div class="col-span-2 flex flex-col gap-8">
-                                <div class="p-2 flex-1 flex flex-col gap-6 pt-4 col-span-2">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
+                            <div class="flex flex-col gap-8 md:col-span-2 md:row-span-3">
+                                <div class="p-2 flex-1 flex flex-col gap-6 pt-4">
                                     <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">250 jobs found</h3>
                                     <div class="flex flex-col gap-5">
                                         <a href="#" class="bg-white border border-solid border-gray rounded-xl transition overflow-hidden p-4 flex gap-6 items-start">
@@ -432,7 +432,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="bg-primary-100 rounded-3xl transition overflow-hidden p-6 flex gap-6 items-center">
+                                <div class="bg-primary-100 rounded-3xl transition overflow-hidden p-6 flex gap-6 items-center md:col-span-2">
                                     <div class="flex-1 flex flex-col gap-3">
                                         <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Get notifications</h3>
                                         <div class="flex flex-col sm:flex-row items-center gap-4">
@@ -451,180 +451,179 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-span-1 flex flex-col gap-6">
-                                <div class="flex-1 flex flex-col rounded-3xl px-6 py-8 border border-solid border-gray">
-                                    <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Job Filter</h3>
-                                    <div class="flex flex-col gap-6 divide-y">
-                                        <div class="flex flex-col gap-4 pt-6">
-                                            <h3 class="line-clamp-1 text-gray-900 text-base lg:text-lg font-brockmann font-semibold">Job type</h3>
-                                            <div class="space-y-4">
-                                                <div class="relative flex items-start">
-                                                    <div class="flex h-6 items-center">
-                                                        <input
-                                                            id="job-type--full-time"
-                                                            aria-describedby="comments-description"
-                                                            name="comments"
-                                                            type="checkbox"
-                                                            class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
-                                                        >
-                                                    </div>
-                                                    <div class="ml-2 text-sm leading-6">
-                                                        <label for="job-type--full-time" class="select-none font-medium text-gray-500">Full time</label>
-                                                    </div>
+                            <div class="flex flex-col rounded-3xl px-6 py-8 border border-solid border-gray md:col-start-3 md:row-start-1 order-first md:order-none">
+                                <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Job Filter</h3>
+                                <div class="flex flex-col gap-6 divide-y">
+                                    <div class="flex flex-col gap-4 pt-6">
+                                        <h3 class="line-clamp-1 text-gray-900 text-base lg:text-lg font-brockmann font-semibold">Job type</h3>
+                                        <div class="space-y-4">
+                                            <div class="relative flex items-start">
+                                                <div class="flex h-6 items-center">
+                                                    <input
+                                                        id="job-type--full-time"
+                                                        aria-describedby="comments-description"
+                                                        name="comments"
+                                                        type="checkbox"
+                                                        class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
+                                                    >
                                                 </div>
-                                                <div class="relative flex items-start">
-                                                    <div class="flex h-6 items-center">
-                                                        <input
-                                                            id="job-type--part-time"
-                                                            aria-describedby="comments-description"
-                                                            name="comments"
-                                                            type="checkbox"
-                                                            class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
-                                                        >
-                                                    </div>
-                                                    <div class="ml-2 text-sm leading-6">
-                                                        <label for="job-type--part-time" class="select-none font-medium text-gray-500">Part time</label>
-                                                    </div>
+                                                <div class="ml-2 text-sm leading-6">
+                                                    <label for="job-type--full-time" class="select-none font-medium text-gray-500">Full time</label>
                                                 </div>
-                                                <div class="relative flex items-start">
-                                                    <div class="flex h-6 items-center">
-                                                        <input
-                                                            id="job-type--remote"
-                                                            aria-describedby="comments-description"
-                                                            name="comments"
-                                                            type="checkbox"
-                                                            class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
-                                                        >
-                                                    </div>
-                                                    <div class="ml-2 text-sm leading-6">
-                                                        <label for="job-type--remote" class="select-none font-medium text-gray-500">Remote</label>
-                                                    </div>
+                                            </div>
+                                            <div class="relative flex items-start">
+                                                <div class="flex h-6 items-center">
+                                                    <input
+                                                        id="job-type--part-time"
+                                                        aria-describedby="comments-description"
+                                                        name="comments"
+                                                        type="checkbox"
+                                                        class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
+                                                    >
+                                                </div>
+                                                <div class="ml-2 text-sm leading-6">
+                                                    <label for="job-type--part-time" class="select-none font-medium text-gray-500">Part time</label>
+                                                </div>
+                                            </div>
+                                            <div class="relative flex items-start">
+                                                <div class="flex h-6 items-center">
+                                                    <input
+                                                        id="job-type--remote"
+                                                        aria-describedby="comments-description"
+                                                        name="comments"
+                                                        type="checkbox"
+                                                        class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
+                                                    >
+                                                </div>
+                                                <div class="ml-2 text-sm leading-6">
+                                                    <label for="job-type--remote" class="select-none font-medium text-gray-500">Remote</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex flex-col gap-4 pt-6">
-                                            <h3 class="line-clamp-1 text-gray-900 text-base lg:text-lg font-brockmann font-semibold">Experience Levels</h3>
-                                            <div class="space-y-4">
-                                                <div class="relative flex items-start">
-                                                    <div class="flex h-6 items-center">
-                                                        <input
-                                                            id="levels--entry"
-                                                            aria-describedby="comments-description"
-                                                            name="comments"
-                                                            type="checkbox"
-                                                            class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
-                                                        >
-                                                    </div>
-                                                    <div class="ml-2 text-sm leading-6">
-                                                        <label for="levels--entry" class="select-none font-medium text-gray-500">Entry Levels</label>
-                                                    </div>
+                                    </div>
+                                    <div class="flex flex-col gap-4 pt-6">
+                                        <h3 class="line-clamp-1 text-gray-900 text-base lg:text-lg font-brockmann font-semibold">Experience Levels</h3>
+                                        <div class="space-y-4">
+                                            <div class="relative flex items-start">
+                                                <div class="flex h-6 items-center">
+                                                    <input
+                                                        id="levels--entry"
+                                                        aria-describedby="comments-description"
+                                                        name="comments"
+                                                        type="checkbox"
+                                                        class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
+                                                    >
                                                 </div>
-                                                <div class="relative flex items-start">
-                                                    <div class="flex h-6 items-center">
-                                                        <input
-                                                            id="levels--intermediate"
-                                                            aria-describedby="comments-description"
-                                                            name="comments"
-                                                            type="checkbox"
-                                                            class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
-                                                        >
-                                                    </div>
-                                                    <div class="ml-2 text-sm leading-6">
-                                                        <label for="levels--intermediate" class="select-none font-medium text-gray-500">Intermediate</label>
-                                                    </div>
+                                                <div class="ml-2 text-sm leading-6">
+                                                    <label for="levels--entry" class="select-none font-medium text-gray-500">Entry Levels</label>
                                                 </div>
-                                                <div class="relative flex items-start">
-                                                    <div class="flex h-6 items-center">
-                                                        <input
-                                                            id="levels--expert"
-                                                            aria-describedby="comments-description"
-                                                            name="comments"
-                                                            type="checkbox"
-                                                            class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
-                                                        >
-                                                    </div>
-                                                    <div class="ml-2 text-sm leading-6">
-                                                        <label for="levels--expert" class="select-none font-medium text-gray-500">Expert</label>
-                                                    </div>
+                                            </div>
+                                            <div class="relative flex items-start">
+                                                <div class="flex h-6 items-center">
+                                                    <input
+                                                        id="levels--intermediate"
+                                                        aria-describedby="comments-description"
+                                                        name="comments"
+                                                        type="checkbox"
+                                                        class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
+                                                    >
+                                                </div>
+                                                <div class="ml-2 text-sm leading-6">
+                                                    <label for="levels--intermediate" class="select-none font-medium text-gray-500">Intermediate</label>
+                                                </div>
+                                            </div>
+                                            <div class="relative flex items-start">
+                                                <div class="flex h-6 items-center">
+                                                    <input
+                                                        id="levels--expert"
+                                                        aria-describedby="comments-description"
+                                                        name="comments"
+                                                        type="checkbox"
+                                                        class="h-4 w-4 rounded border-gray-200 text-indigo-500 focus:ring-indigo-500"
+                                                    >
+                                                </div>
+                                                <div class="ml-2 text-sm leading-6">
+                                                    <label for="levels--expert" class="select-none font-medium text-gray-500">Expert</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex flex-col gap-4 pt-6">
-                                            <h3 class="line-clamp-1 text-gray-900 text-base lg:text-lg font-brockmann font-semibold">Expected Salary</h3>
-                                            <div class="space-y-4">
-                                                <div class="flex gap-x-2.5">
-                                                    <input
-                                                        id="budget-under-1k"
-                                                        name="budget"
-                                                        value="under_1k"
-                                                        type="radio"
-                                                        class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
-                                                    >
-                                                    <label for="budget-under-1k" class="select-none font-medium text-gray-500">Under $1000</label>
-                                                </div>
-                                                <div class="flex gap-x-2.5">
-                                                    <input
-                                                        id="budget-1000-10000"
-                                                        name="budget"
-                                                        value="1k-10k"
-                                                        type="radio"
-                                                        class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
-                                                    >
-                                                    <label for="budget-1000-10000" class="select-none font-medium text-gray-500">$1000 - $10.000</label>
-                                                </div>
-                                                <div class="flex gap-x-2.5">
-                                                    <input
-                                                        id="budget-10000-20000"
-                                                        name="budget"
-                                                        value="10k_20k"
-                                                        type="radio"
-                                                        class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
-                                                    >
-                                                    <label for="budget-10000-20000" class="select-none font-medium text-gray-500">$10.000 - $20.000</label>
-                                                </div>
-                                                <div class="flex gap-x-2.5">
-                                                    <input
-                                                        id="budget-from-20000"
-                                                        name="budget"
-                                                        value="from_20k"
-                                                        type="radio"
-                                                        class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
-                                                    >
-                                                    <label for="budget-from-20000" class="select-none font-medium text-gray-500">$20.000+</label>
-                                                </div>
+                                    </div>
+                                    <div class="flex flex-col gap-4 pt-6">
+                                        <h3 class="line-clamp-1 text-gray-900 text-base lg:text-lg font-brockmann font-semibold">Expected Salary</h3>
+                                        <div class="space-y-4">
+                                            <div class="flex gap-x-2.5">
+                                                <input
+                                                    id="budget-under-1k"
+                                                    name="budget"
+                                                    value="under_1k"
+                                                    type="radio"
+                                                    class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
+                                                >
+                                                <label for="budget-under-1k" class="select-none font-medium text-gray-500">Under $1000</label>
+                                            </div>
+                                            <div class="flex gap-x-2.5">
+                                                <input
+                                                    id="budget-1000-10000"
+                                                    name="budget"
+                                                    value="1k-10k"
+                                                    type="radio"
+                                                    class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
+                                                >
+                                                <label for="budget-1000-10000" class="select-none font-medium text-gray-500">$1000 - $10.000</label>
+                                            </div>
+                                            <div class="flex gap-x-2.5">
+                                                <input
+                                                    id="budget-10000-20000"
+                                                    name="budget"
+                                                    value="10k_20k"
+                                                    type="radio"
+                                                    class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
+                                                >
+                                                <label for="budget-10000-20000" class="select-none font-medium text-gray-500">$10.000 - $20.000</label>
+                                            </div>
+                                            <div class="flex gap-x-2.5">
+                                                <input
+                                                    id="budget-from-20000"
+                                                    name="budget"
+                                                    value="from_20k"
+                                                    type="radio"
+                                                    class="mt-1 h-4 w-4 border-gray-300 text-indigo-500 shadow-sm focus:ring-indigo-500"
+                                                >
+                                                <label for="budget-from-20000" class="select-none font-medium text-gray-500">$20.000+</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="bg-primary-100 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10">
-                                    <div class="p-2 flex-1 flex flex-col gap-4 pt-4">
-                                        <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Headline</h3>
-                                        <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
-                                    </div>
-                                    <div class="image-box overflow-hidden rounded-2xl">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/app/images/2.jpg"
-                                            class="w-full aspect-video object-cover object-center"
-                                            alt="Image"
-                                        >
-                                    </div>
-                                </a>
-                                <a href="#" class="bg-white border border-solid border-gray rounded-3xl transition overflow-hidden p-4 grid grid-cols-3 gap-6 items-center">
-                                    <div class="p-2 flex-1 flex flex-col gap-3 pt-4 col-span-2">
-                                        <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">App download</h3>
-                                        <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
-                                    </div>
-                                    <div class="image-box overflow-hidden rounded-2xl">
-                                        <img
-                                            loading="lazy"
-                                            src="./assets/app/images/favicon.png"
-                                            class="w-full aspect-square object-cover object-center"
-                                            alt="Image"
-                                        >
-                                    </div>
-                                </a>
                             </div>
+                            <a href="#" class="bg-primary-100 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10 group md:col-start-3 md:row-start-2">
+                                <div class="p-2 flex-1 flex flex-col gap-4 pt-4">
+                                    <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Headline</h3>
+                                    <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                </div>
+                                <div class="image-box overflow-hidden rounded-2xl opacity-1 group-hover:opacity-90 transition-all">
+                                    <img
+                                        loading="lazy"
+                                        src="./assets/app/images/2.jpg"
+                                        class="w-full aspect-video object-cover object-center"
+                                        alt="Image"
+                                    >
+                                </div>
+                            </a>
+                            <a href="#" class="bg-white border border-solid border-gray rounded-3xl transition overflow-hidden p-4 flex gap-6 items-center md:col-start-3 md:row-start-3">
+                                <div class="p-2 flex-1 flex flex-col gap-3 pt-4 col-span-2">
+                                    <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">App download</h3>
+                                    <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
+                                </div>
+                                <div class="image-box overflow-hidden rounded-2xl max-w-20 lg:max-w-24">
+                                    <img
+                                        loading="lazy"
+                                        src="./assets/app/images/favicon.png"
+                                        class="w-full aspect-square object-cover object-center"
+                                        alt="Image"
+                                    >
+                                </div>
+                            </a>
+                            
                         </div>
                     </div>
                 </section>
@@ -636,12 +635,12 @@
                                 Sichtbarkeit für Unternehmen
                             </h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-                                <a href="#" class="bg-primary-120 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10">
+                                <a href="#" class="bg-primary-120 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10 group">
                                     <div class="p-2 flex-1 flex flex-col gap-4 pt-4">
                                         <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Headline</h3>
                                         <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
                                     </div>
-                                    <div class="image-box overflow-hidden rounded-2xl">
+                                    <div class="image-box overflow-hidden rounded-2xl opacity-1 group-hover:opacity-90 transition-all">
                                         <img
                                             loading="lazy"
                                             src="./assets/app/images/6.jpg"
@@ -650,12 +649,12 @@
                                         >
                                     </div>
                                 </a>
-                                <a href="#" class="bg-primary-120 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10">
+                                <a href="#" class="bg-primary-120 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10 group">
                                     <div class="p-2 flex-1 flex flex-col gap-4 pt-4">
                                         <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Headline</h3>
                                         <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
                                     </div>
-                                    <div class="image-box overflow-hidden rounded-2xl">
+                                    <div class="image-box overflow-hidden rounded-2xl opacity-1 group-hover:opacity-90 transition-all">
                                         <img
                                             loading="lazy"
                                             src="./assets/app/images/7.jpg"
@@ -664,12 +663,12 @@
                                         >
                                     </div>
                                 </a>
-                                <a href="#" class="bg-primary-120 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10 sm:hidden md:flex">
+                                <a href="#" class="bg-primary-120 rounded-3xl transition overflow-hidden p-4 flex flex-col gap-10 group sm:hidden md:flex">
                                     <div class="p-2 flex-1 flex flex-col gap-4 pt-4">
                                         <h3 class="line-clamp-2 text-gray-900 text-xl lg:text-2xl font-brockmann font-semibold">Headline</h3>
                                         <p class="line-clamp-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt corporis doloremque laboriosam perferendis, dolores velit modi ex aliquid adipisci sit ipsum. Fugit sit expedita sequi dignissimos commodi, at quis exercitationem.</p>
                                     </div>
-                                    <div class="image-box overflow-hidden rounded-2xl">
+                                    <div class="image-box overflow-hidden rounded-2xl opacity-1 group-hover:opacity-90 transition-all">
                                         <img
                                             loading="lazy"
                                             src="./assets/app/images/8.jpg"
