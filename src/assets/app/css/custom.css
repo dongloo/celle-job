@@ -13,87 +13,25 @@ html{
 }
 
 
-.product-slider .product-swiper-pagination {
-    top: 0;
-    position: relative !important;
-    bottom: 0;
-    text-align: center;
-    margin-top: 32px;
-}
-
-.product-slider .product-swiper-pagination .swiper-pagination-bullet {
-    background: rgb(17 24 39 / 1);
-}
-
-
-@media (min-width: 1280px) {
-    .product-slider-area .product-slider{
-        overflow: visible;
-    }
-}
-
-
-
-
-.nav-item > span:after {
+.job-meta-item:not(:last-child):after {
     content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    width: 3px;
     height: 3px;
-    background: transparent;
-    border-radius: 3px;
-    transition: all 0.25s;
-}
-.nav-item.active > span:after{
-    background-image: linear-gradient(to right, #4c1d95 0%, #be185d  100%);
-}
-
-/* .product-slider .swiper-slide {
-    opacity: 0;
+    background: rgb(107 114 128 / var(--tw-text-opacity));
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 
-.product-slider .swiper-slide.swiper-slide-active {
-    opacity: 1;
+.job-meta-item:not(:last-child) {
+    padding-right: 8px;
 }
-
-.product-slider .swiper-slide.swiper-slide-active ~ .swiper-slide {
-    opacity: 1;
-} */
-
-.header-nav > a{
-    font-weight: 400;
-
-}
-.header-nav > a.active{
-    font-weight: 700;
-}
-
-.chatbot-h{
-    --header-height: 96px;
-    --chatbot-bottom: calc(44px + 20px + 12px);
-    --chatbot-minus-height: calc(var(--header-height) + var(--chatbot-bottom) + 24px);
-    height: calc(100vh - var(--chatbot-minus-height));
-    height: calc(100dvh - var(--chatbot-minus-height));
-    height: calc(100svh - var(--chatbot-minus-height));
-}
-.chatbot-w{
-    width: calc(100% - 40px);
-}
-#chatbot-iframe-area.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-}
-@media (max-width: 575px) {
-    .chatbot-h{
-        --header-height: 80px;
-        --chatbot-bottom: calc(44px + 20px + 12px);
+@media(min-width:768px){
+    .job-meta-item:not(:last-child) {
+        padding-right: 12px;
     }
-}
-.text-gradient-primay{
-    background: -webkit-linear-gradient(0deg, #4c1d95, #be185d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
