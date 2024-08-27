@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.9 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1345,10 +1345,6 @@ html {
   line-height: 2rem;
 }
 
-.leading-\[1\.1rem\] {
-  line-height: 1.1rem;
-}
-
 .leading-\[1\.1\] {
   line-height: 1.1;
 }
@@ -1628,10 +1624,6 @@ html {
     line-height: 1.25rem;
   }
 
-  .md\:leading-\[1\.1rem\] {
-    line-height: 1.1rem;
-  }
-
   .md\:leading-\[1\.1\] {
     line-height: 1.1;
   }
@@ -1704,14 +1696,6 @@ html {
 
   .lg\:text-\[3\.5rem\] {
     font-size: 3.5rem;
-  }
-
-  .lg\:leading-tight {
-    line-height: 1.25;
-  }
-
-  .lg\:leading-\[1\.1rem\] {
-    line-height: 1.1rem;
   }
 
   .lg\:leading-\[1\.1\] {
