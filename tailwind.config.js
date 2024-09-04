@@ -8,7 +8,7 @@ module.exports = {
         'brockmann': ["Brockmann", "Segoe UI", "Arial", "Segoe", "DejaVu Sans", "Trebuchet MS", "Verdana", "sans-serif"],
       },
       boxShadow: {
-        'base': '0 7px 16px rgba(0,0,0,.03)'
+        'base': '0 1px 6px rgba(0,0,0,.04)'
       },
       colors: {
         'primary': {
