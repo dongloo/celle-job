@@ -99,3 +99,11 @@ html{
     -webkit-animation-name: scrolling-right;
             animation-name: scrolling-right
 }
+
+.promotion-animated-group.is-hover .scrolling-left,
+.promotion-animated-group.is-hover .scrolling-right {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+}
+
+

@@ -57,3 +57,12 @@ const logoSlider = new Swiper('.logo-slider', {
 
 });
 
+document.querySelectorAll('.promotion-animated-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.closest('.promotion-animated-group')?.classList.add('is-hover');
+    });
+
+    item.addEventListener('mouseleave', function() {
+        this.closest('.promotion-animated-group')?.classList.remove('is-hover');
+    });
+});
