@@ -66,3 +66,107 @@ document.querySelectorAll('.promotion-animated-item').forEach(item => {
         this.closest('.promotion-animated-group')?.classList.remove('is-hover');
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    function calculateDropdownPositions() {
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+        
+        dropdownMenus.forEach(menu => {
+            const parentLi = menu.closest('li');
+            const parentLink = parentLi.querySelector('a'); 
+            const pcMenu = parentLi.closest('.pc-menu');
+            
+            const pcMenuLeft = pcMenu.getBoundingClientRect().left;
+            
+            const linkRect = parentLink.getBoundingClientRect();
+            const linkLeft = linkRect.left;
+            const linkWidth = linkRect.width;
+            
+            const linkCenter = linkLeft + (linkWidth / 2);
+            
+            const leftValue = linkCenter - pcMenuLeft;
+            
+            menu.style.setProperty('--left', `${leftValue}px`);
+        });
+    }
+ 
+    calculateDropdownPositions();
+ 
+    window.addEventListener('resize', calculateDropdownPositions);
+ });
+
+ document.addEventListener('DOMContentLoaded', function() {
+    function slideUp(element, duration = 300) {
+        element.style.height = element.offsetHeight + 'px';
+        element.style.transitionProperty = 'height, margin, padding';
+        element.style.transitionDuration = duration + 'ms';
+        element.offsetHeight; // force repaint
+        element.style.overflow = 'hidden';
+        element.style.height = 0;
+        element.style.paddingTop = 0;
+        element.style.paddingBottom = 0;
+        element.style.marginTop = 0;
+        element.style.marginBottom = 0;
+        
+        setTimeout(() => {
+            element.style.display = 'none';
+            element.style.removeProperty('height');
+            element.style.removeProperty('padding-top');
+            element.style.removeProperty('padding-bottom');
+            element.style.removeProperty('margin-top');
+            element.style.removeProperty('margin-bottom');
+            element.style.removeProperty('overflow');
+            element.style.removeProperty('transition-duration');
+            element.style.removeProperty('transition-property');
+        }, duration);
+    }
+ 
+    function slideDown(element, duration = 300) {
+        element.style.removeProperty('display');
+        let display = window.getComputedStyle(element).display;
+        if (display === 'none') display = 'block';
+        element.style.display = display;
+        
+        let height = element.offsetHeight;
+        element.style.overflow = 'hidden';
+        element.style.height = 0;
+        element.style.paddingTop = 0;
+        element.style.paddingBottom = 0;
+        element.style.marginTop = 0;
+        element.style.marginBottom = 0;
+        element.offsetHeight; // force repaint
+        
+        element.style.transitionProperty = 'height, margin, padding';
+        element.style.transitionDuration = duration + 'ms';
+        element.style.height = height + 'px';
+        element.style.removeProperty('padding-top');
+        element.style.removeProperty('padding-bottom');
+        element.style.removeProperty('margin-top');
+        element.style.removeProperty('margin-bottom');
+        
+        setTimeout(() => {
+            element.style.removeProperty('height');
+            element.style.removeProperty('overflow');
+            element.style.removeProperty('transition-duration');
+            element.style.removeProperty('transition-property');
+        }, duration);
+    }
+ 
+    const toggleButtons = document.querySelectorAll('.toggle-mobile-submenu');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentLi = this.closest('li');
+            const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+            
+            // Toggle class is-active
+            this.classList.toggle('is-active');
+            
+            if (dropdownMenu.style.display === 'none' || !dropdownMenu.style.display) {
+                slideDown(dropdownMenu);
+            } else {
+                slideUp(dropdownMenu);
+            }
+        });
+    });
+ });
