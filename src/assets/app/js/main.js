@@ -66,8 +66,17 @@ document.querySelectorAll('.promotion-animated-item').forEach(item => {
         this.closest('.promotion-animated-group')?.classList.remove('is-hover');
     });
 });
+
+//Menu
 document.addEventListener('DOMContentLoaded', function() {
+    // Check window width before running dropdown positioning code
+    function shouldExecute() {
+        return window.innerWidth > 1280;
+    }
+
     function calculateDropdownPositions() {
+        if (!shouldExecute()) return;
+
         const dropdownMenus = document.querySelectorAll('.dropdown-menu');
         
         dropdownMenus.forEach(menu => {
@@ -89,13 +98,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
  
-    calculateDropdownPositions();
+    // Only run initial calculation if window width > 1280px
+    if (shouldExecute()) {
+        calculateDropdownPositions();
+    }
  
+    // Check window width before running on resize
     window.addEventListener('resize', calculateDropdownPositions);
- });
+});
 
- document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     function slideUp(element, duration = 300) {
+        if (window.innerWidth > 1280) return; // Don't run if window width > 1280px
+
         element.style.height = element.offsetHeight + 'px';
         element.style.transitionProperty = 'height, margin, padding';
         element.style.transitionDuration = duration + 'ms';
@@ -121,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
  
     function slideDown(element, duration = 300) {
+        if (window.innerWidth > 1280) return; // Don't run if window width > 1280px
+
         element.style.removeProperty('display');
         let display = window.getComputedStyle(element).display;
         if (display === 'none') display = 'block';
@@ -153,20 +170,22 @@ document.addEventListener('DOMContentLoaded', function() {
  
     const toggleButtons = document.querySelectorAll('.toggle-mobile-submenu');
     
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const parentLi = this.closest('li');
-            const dropdownMenu = parentLi.querySelector('.dropdown-menu');
-            
-            // Toggle class is-active
-            this.classList.toggle('is-active');
-            
-            if (dropdownMenu.style.display === 'none' || !dropdownMenu.style.display) {
-                slideDown(dropdownMenu);
-            } else {
-                slideUp(dropdownMenu);
-            }
+    // Only add event listeners if window width <= 1280px
+    if (window.innerWidth <= 1280) {
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parentLi = this.closest('li');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+                
+                this.classList.toggle('is-active');
+                
+                if (dropdownMenu.style.display === 'none' || !dropdownMenu.style.display) {
+                    slideDown(dropdownMenu);
+                } else {
+                    slideUp(dropdownMenu);
+                }
+            });
         });
-    });
- });
+    }
+});

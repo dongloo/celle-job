@@ -46,6 +46,23 @@ module.exports = {
  
     }
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities, variants }) {
+      const maskScrollbarUtilities = {
+        '.mask-scrollbar': {
+          '-webkit-mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 1) calc(100% - 24px), rgba(0, 0, 0, 0) 100%)',
+          'mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 1) calc(100% - 24px), rgba(0, 0, 0, 0) 100%)'
+        },
+        '.mask-scrollbar-none': {
+          '-webkit-mask-image': 'none',
+          'mask-image': 'none'
+        }
+      };
+
+      addUtilities(maskScrollbarUtilities, {
+        variants: ['responsive']
+      });
+    }
+  ],
 }
 
